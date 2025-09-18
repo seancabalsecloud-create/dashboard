@@ -1,13 +1,14 @@
+// vite.config.ts
 import { defineConfig } from 'vite'
-import path from 'node:path'
 import react from '@vitejs/plugin-react'
+import { fileURLToPath, URL } from 'node:url'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/', // keep '/' for Netlify root sites
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 })

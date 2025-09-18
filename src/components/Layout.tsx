@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { Badge } from '@/components/ui/badge'
 
 export function Layout({ children }: { children: ReactNode }) {
